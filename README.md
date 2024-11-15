@@ -1,3 +1,6 @@
+# 학습 정리
+
+
 ## Filter && interceptor
 
 <p align="center"><img src="https://velog.velcdn.com/images/snowspring/post/71fcaf16-43a7-40a8-9fd2-227876da41a7/image.png"  width="50%" height="50%"></p>
@@ -8,10 +11,10 @@
 
 ### 차이점
 #### 영역의 차이
-Filter는 웹 애플리케이션의 영역 내에서 필요한 자원들을 활용합니다.
++ Filter는 웹 애플리케이션의 영역 내에서 필요한 자원들을 활용합니다.
 웹 애플리케이션 내에서 동작하므로, 스프링의 Context를 접근하기 어렵습니다.
 
-Interceptor의 경우 스프링에서 관리되기 때문에 스프링 내의 모든 객체에 접근이 가능하다는 차이가 있습니다. 즉, 빈을 관리하는 스프링 컨텍스트 내에 있어서 생성된 빈들에 자유롭게 접근할 수 있습니다.
++ Interceptor의 경우 스프링에서 관리되기 때문에 스프링 내의 모든 객체에 접근이 가능하다는 차이가 있습니다. 즉, 빈을 관리하는 스프링 컨텍스트 내에 있어서 생성된 빈들에 자유롭게 접근할 수 있습니다.
 
 예를 들어, 추후에 살펴볼 HandlerInterceptor의 경우
 스프링의 빈으로 등록된 컨트롤러나 서비스 객체들을 주입받아서 사용할 수 있기 때문에
@@ -20,18 +23,24 @@ Interceptor의 경우 스프링에서 관리되기 때문에 스프링 내의 �
 
 #### 호출 시점의 차이
 Filter는 DispatherServlet이 실행되기 전, Interceptor는 DispatherServlet이 실행된 후에 호출되며 Interceptor는 DispatherServlet이 실행되며 호출됩니다.
+
+
 #### 용도의 차이
 + Filter
-  👉🏻 보안 관련 공통 작업
-  👉🏻 모든 요청에 대한 로깅 또는 감사
-  👉🏻 이미지/데이터 압축 및 문자열 인코딩
- 
-+ Interceptor
-                          👉🏻 인증/인가 등과 같은 공통 작업
-                          👉🏻 Controller로 넘겨주는 정보의 가공
-                          👉🏻 API 호출에 대한 로깅 또는 감사
- 
 
+👉🏻 보안 관련 공통 작업
+
+👉🏻 모든 요청에 대한 로깅 또는 감사
+  
+👉🏻 이미지/데이터 압축 및 문자열 인코딩
+
++ Interceptor
+
+👉🏻 인증/인가 등과 같은 공통 작업
+ 
+👉🏻 Controller로 넘겨주는 정보의 가공
+
+👉🏻 API 호출에 대한 로깅 또는 감사
 
 
 ### Filter interface
