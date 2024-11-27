@@ -89,9 +89,6 @@ public class CustomFilter implements Filter {
             throw new ServletException(e);
 
         }
-        finally {
-            log.info("REQUEST URI: {}", requestURI);
-        }
 
 
     }
