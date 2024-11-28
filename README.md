@@ -140,7 +140,9 @@ public interface HandlerInterceptor {
 + 컨트롤러 호출 전에 호출된다.
 
 #### postHandle
++ 컨트롤러가 요청을 처리한 이후에 호출됩니다.
 + 컨트롤러에서 예외가 발생하면 `postHandle` 은 호출되지 않는다.
+
 #### afterCompletion
 + 예외가 발생하면 `postHandle()` 는 호출되지 않으므로 예외와 무관하게 공통 처리를 하려면 `afterCompletion()` 을 사용해야 한다.
 + 예외가 발생하면 `afterCompletion()` 에 예외 정보( `ex` )를 포함해서 호출된다.
